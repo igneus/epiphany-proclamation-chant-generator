@@ -6,6 +6,9 @@ Ruby script generating notation for the Epiphany Proclamation chant. Fully autom
 * [gly](https://github.com/igneus/gly)
   and [gregorio](https://gregorio-project.github.io) for music engraving
 
+For commentary of the tune used by the generator see this
+[blog post](http://www.inadiutorium.cz/blog/20200103-ohlaseni-pohyblivych-svatku).
+
 ## Usage
 
 * Clone the repository.
