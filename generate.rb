@@ -108,7 +108,7 @@ class GlySnippetForFeast
 
   def make_snippet(feast, initial_pes: true, final_ornament: true)
     liturgical_year = feast == :first_advent_sunday ? @year : @year - 1
-    date = CalendariumRomanum::Temporale::Dates.public_send(feast, @year)
+    date = CalendariumRomanum::Temporale::Dates.public_send(feast, liturgical_year)
     lyrics = DateToText.(date)
     lyrics_parsed = @parser.parse_str(lyrics).scores.first.lyrics
     syllable_count =
