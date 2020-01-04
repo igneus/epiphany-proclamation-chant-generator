@@ -118,25 +118,26 @@ class GlySnippetForFeast
         .to_a
         .size
 
+    beginning = [initial_pes ? 'fh' : 'h']
+    preparatory_syllables = ['g', 'h']
+    accent = ['i']
+    ending = ['h.']
     music =
-      (initial_pes ? 'fh ' : 'h ') + # first note
+      beginning +
       if final_ornament
         last_word_length = lyrics_parsed.each_word.to_a.last.each_syllable.to_a.count
-        raise "last word too short '#{lyrics}'" if last_word_length < 2
+        raise "last word too short '#{lyrics}'" if last_word_length < (accent.size + ending.size)
 
-        # reciting
-        ('h ' * (syllable_count - last_word_length - 3)) +
-          # preparatory syllables
-          'g h ' +
-          # last word
-          'i ' +
-          ('h ' * (last_word_length - 2))
+        (['h'] * (syllable_count - last_word_length - beginning.size - preparatory_syllables.size)) +
+          preparatory_syllables +
+          accent +
+          (['h'] * (last_word_length - accent.size - ending.size))
       else
-        ('h ' * (syllable_count - 2))
+        ['h'] * (syllable_count - beginning.size - ending.size)
       end +
-      'h.'
+      ending
 
-    music + "\n" + lyrics
+    music.join(' ') + "\n" + lyrics
   end
 end
 
