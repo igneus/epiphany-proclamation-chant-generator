@@ -126,7 +126,6 @@ class GlySnippetForFeast
       beginning +
       if final_ornament
         last_word_length = lyrics_parsed.each_word.to_a.last.each_syllable.to_a.count
-        raise "last word too short '#{lyrics}'" if last_word_length < (accent.size + ending.size)
 
         (['h'] * (syllable_count - last_word_length - beginning.size - preparatory_syllables.size)) +
           preparatory_syllables +
