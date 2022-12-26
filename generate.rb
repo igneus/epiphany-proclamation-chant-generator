@@ -6,7 +6,7 @@
 require 'calendarium-romanum'
 require 'gly'
 
-# Movable feasts whose dates are part in the Epiphany proclamation,
+# Movable feasts whose dates are part of the Epiphany proclamation,
 # as feast symbols defined by calendarium-romanum
 FEASTS = %i(ash_wednesday easter_sunday ascension pentecost corpus_christi first_advent_sunday)
 
@@ -63,7 +63,7 @@ class DateToText
     'pro -- sin -- ce',
   ]
 
-  # Takes `Date`, returns it's string representation as it will be chanted.
+  # Takes `Date`, returns its string representation as it will be chanted.
   def self.call(date)
     NUMERALS[date.day] +
       ' ' +
