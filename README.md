@@ -1,6 +1,6 @@
 # Epiphany Proclamation Chant (Czech) Generator
 
-Ruby script generating notation for the Epiphany Proclamation chant. Fully automated, using
+Ruby script generating notation for the [Epiphany Proclamation](https://en.wikipedia.org/wiki/Noveritis) chant. Fully automated, using
 
 * [calendarium-romanum](https://github.com/igneus/calendarium-romanum) for calendar computation
 * [gly](https://github.com/igneus/gly)
