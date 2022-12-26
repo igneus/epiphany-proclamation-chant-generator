@@ -119,6 +119,7 @@ class GlySnippetForFeast
         .size
 
     beginning = [initial_pes ? 'fh' : 'h']
+    reciting = ['h']
     preparatory_syllables = ['g', 'h']
     accent = ['i']
     ending = ['h.']
@@ -127,12 +128,12 @@ class GlySnippetForFeast
       if final_ornament
         last_word_length = lyrics_parsed.each_word.to_a.last.each_syllable.to_a.count
 
-        (['h'] * (syllable_count - last_word_length - beginning.size - preparatory_syllables.size)) +
+        (reciting * (syllable_count - last_word_length - beginning.size - preparatory_syllables.size)) +
           preparatory_syllables +
           accent +
-          (['h'] * (last_word_length - accent.size - ending.size))
+          (reciting * (last_word_length - accent.size - ending.size))
       else
-        ['h'] * (syllable_count - beginning.size - ending.size)
+        reciting * (syllable_count - beginning.size - ending.size)
       end +
       ending
 
