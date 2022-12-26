@@ -21,6 +21,8 @@ In order to transform the gly file to a pdf document, you will need LaTeX and gr
 run `$ bundle exec gly preview epiphany_proclamation.gly`
 It will produce file `epiphany_proclamation.pdf`.
 
+(For the default year range all these steps can be executed by `bundle exec rake`)
+
 ## Credits
 
 Czech Epiphany proclamation text was first set to the tune given in the
