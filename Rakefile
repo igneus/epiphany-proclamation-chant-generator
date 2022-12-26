@@ -12,8 +12,12 @@ file 'epiphany_proclamation.gly' => ['generate.rb', 'template.gly', 'Gemfile.loc
   sh "ruby generate.rb > #{t.name}"
 end
 
-desc 'generate Epiphany Proclamation chants for the default year range'
-task default: gly_preview_task('epiphany_proclamation.gly')
+gly_preview_task('epiphany_proclamation.gly').tap do |t|
+  desc 'generate Epiphany Proclamation chants for the default year range'
+  task default: t
+end
 
-desc 'build pdf document discussing variants of the chant tune'
-task var: gly_preview_task('variants.gly')
+gly_preview_task('variants.gly').tap do |t|
+  desc 'build pdf document discussing variants of the chant tune'
+  task var: t
+end
